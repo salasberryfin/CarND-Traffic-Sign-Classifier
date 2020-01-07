@@ -44,7 +44,7 @@ def map_plot_signs(dt, sign_map):
             image = images[i]
             axs[i].axis('off')
             axs[i].imshow(image)
-            axs[i].set_title(f"{labels[i] + 1} {sign_map[str(labels[i])]:.30}")
+            axs[i].set_title(f"{labels[i]} {sign_map[str(labels[i])]:.30}")
     plt.show()
 
 

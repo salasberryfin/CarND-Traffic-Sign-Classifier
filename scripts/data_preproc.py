@@ -45,14 +45,19 @@ class Dataset:
         Feel free to use as many code cells as needed.
         """
         # Shuffle training data
-        X_train, y_train = shuffle(self.X_train, self.y_train)
-        X_valid, y_valid = shuffle(self.X_valid, self.y_valid)
-        X_test, y_test = shuffle(self.X_test, self.y_test)
+        # X_train, y_train = shuffle(self.X_train, self.y_train)
+        # X_valid, y_valid = shuffle(self.X_valid, self.y_valid)
+        # X_test, y_test = shuffle(self.X_test, self.y_test)
+
+        # Convert to grayscale
+        # X_train = np.sum(self.X_train / 3, axis=3, keepdims=True)
+        # X_valid = np.sum(self.X_valid / 3, axis=3, keepdims=True)
+        # X_test = np.sum(self.X_test / 3, axis=3, keepdims=True)
 
         # Normalize data
-        X_train_norm = (X_train - 128) / 128
-        X_valid_norm = (X_valid - 128) / 128
-        X_test_norm = (X_test - 128) / 128
+        X_train_norm = (self.X_train - 128) / 128
+        X_valid_norm = (self.X_valid - 128) / 128
+        X_test_norm = (self.X_test - 128) / 128
 
         return {"X_train": X_train_norm,
                 "X_valid": X_valid_norm,
