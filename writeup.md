@@ -50,7 +50,7 @@ To visualize the traffic sign dataset that we'll be working with during the proj
 
 #### 1. Describe how you preprocessed the image data. What techniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, and provide example images of the additional data. Then describe the characteristics of the augmented training set like number of images in the set, number of images for each class, etc.)
 
-As a first step, I decided to convert the images to grayscale because it simplifies the process of recognition, since having an RGB image adds features that are not relevant to the detection process. By applying this grayscale conversion the images get reshaped, which we have to take into account when applying the model.
+As a first step, I decided to convert the images to grayscale because it simplifies the process of recognition, since having an RGB image adds features that are not relevant to the detection process. By applying this grayscale conversion the images get reshaped, which we have to take into account when using the model.
 
 I then normalized the image data to obtain a mean zero and equal variance, for which I followed the expression given in the project notes: `(pixel - 128)/ 128`
 
@@ -80,7 +80,7 @@ def pre_process():
 
 #### 2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
 
-I built my model on top of the LeNet-5 implementation shown in the classroom during the Convolutional Neural Networks lesson, for which I started by adapting the code to the specifications of the current dataset. The German Traffic Sign Dataset contains 43 sign images, as we identified previously, so the number of classes of the LeNet-5 implementation need to be updated.
+I built my model on top of the LeNet-5 implementation shown in the classroom during the Convolutional Neural Networks lesson, for which I started by adapting the code to the specifications of the current dataset. The German Traffic Sign Dataset contains 43 sign images, as we identified previously, so the number of classes of the LeNet-5 implementation needs to be updated.
 
 My final model consisted of the following layers:
 
@@ -184,7 +184,7 @@ INFO:tensorflow:Restoring parameters from ./lenet
 Test Accuracy = 0.950
 ```
 
-It is relevant to note that the results improved considerably in terms of accuracy when performin the operation with pre-processed images that were previously converted to grayscale.
+It is relevant to note that the results improved considerably in terms of accuracy when performing the operation with pre-processed images that were previously converted to grayscale.
 
 In order to get to a point where the accuracy reached the desired level, I had to follow a considerable number of iterations, since I had no previous experience with this type of algorithms (or any neural network, to be precise). I would say that 75% of the time I required to finish the project was spent on this particular step of the process. While re-adjusting the original values found in the LeNet example given in the lessons, I got to interact with the code a little further and improve my understanding on how it operates and how the values used for the hyperparameters are crucial to get a successful result.
  
@@ -203,7 +203,9 @@ From all the selected images, it looks like the `30: Beware of ice/snow` may be 
 
 The identifiers of the traffic signs from the csv file will be used to easily verify the accuracy of the classification. The expected results (the IDs of the test images) will be stored in an array for validation. 
 
-Here are the results of the prediction:
+The following image shows the results of the predictions. In this case, I plot the test image that's been analyzed and add, as a title, the ID of the result obtained after the classification:
+
+![alt text](./output_imgs/prediction.png)
 
 | Image			        |     Prediction	     | 
 |:---------------------:|:----------------------:| 
