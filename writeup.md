@@ -1,7 +1,5 @@
 # **Traffic Sign Recognition** 
 
----
-
 **Build a Traffic Sign Recognition Project**
 
 The goals / steps of this project are the following:
@@ -11,18 +9,6 @@ The goals / steps of this project are the following:
 * Use the model to make predictions on new images
 * Analyze the softmax probabilities of the new images
 * Summarize the results with a written report
-
-
-[//]: # (Image References)
-
-[image1]: ./examples/visualization.jpg "Visualization"
-[image2]: ./examples/grayscale.jpg "Grayscaling"
-[image3]: ./examples/random_noise.jpg "Random Noise"
-[image4]: ./examples/placeholder.png "Traffic Sign 1"
-[image5]: ./examples/placeholder.png "Traffic Sign 2"
-[image6]: ./examples/placeholder.png "Traffic Sign 3"
-[image7]: ./examples/placeholder.png "Traffic Sign 4"
-[image8]: ./examples/placeholder.png "Traffic Sign 5"
 
 ## Rubric Points
 
@@ -58,7 +44,7 @@ n_classes = np.unique(np.concatenate((y_train, y_valid, y_test))).size
 
 To visualize the traffic sign dataset that we'll be working with during the project, all of them have been plotted next to their identifier so that they can be properly preclassified which will be useful when validating predictions at the end of the process.
 
-![alt text][./output_imgs/id_sign_map.png]
+![alt text](./output_imgs/id_sign_map.png)
 
 ### Design and Test a Model Architecture
 
@@ -184,13 +170,13 @@ For it to be successful when trying to comply the need of a validation accuracy 
 
 I ended up with a best result of **0.95 test accuracy** when using the following configuration. 
 
+| Parameter	        | Value     | 
 |:-----------------:|:---------:| 
 | Epochs         	| 150   	| 
 | Batch size     	| 128       |
 | Learning rate		| 0.06		|
 | Mu	      	    | 0         |
 | Sigma	      	    | 0.1 	    |
-|:-----------------:|:---------:| 
 
 ```
 Model saved
@@ -209,7 +195,7 @@ In order to get to a point where the accuracy reached the desired level, I had t
 
 These are the German traffic sign images I found on the web that will be used to test the classification accuracy of the proposed model.
 
-![alt text][./output_imgs/test_imgs.png]
+![alt text](./output_imgs/test_imgs.png)
 
 From all the selected images, it looks like the `30: Beware of ice/snow` may be the most difficult to classify, since the quality of the picture is not as good as desired and the features that can be identified in order to create a proper classification may not be easily recognizable.
 
@@ -234,7 +220,7 @@ The model was able to correctly guess 5 of the 5 traffic signs, which gives an a
 
 For this last step, I spent quite some time reviewing the possible representations that could depict the results in a way that clearly identifies the meaning of what's obtained. After searching through the web, I found that using a histogram that shows the different probabilities for each classification on a single image is a very visual and useful solution.
 
-![alt text][./output_imgs/top_k_hist.png]
+![alt text](./output_imgs/top_k_hist.png)
 
 As expected, the `Beware of ice/snow` sign is the one that's less unequivocally identified, but we still get a very high level of accuracy in the classification.
 
